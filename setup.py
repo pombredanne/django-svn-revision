@@ -4,7 +4,7 @@ import sys, os
 version = '0.1'
 
 setup(
-    name='svn-revision',
+    name='svnrevision',
     version=version,
     description="Adds a template tag to get the current svn revision.",
     author='Sean Auriti, David Napolitan and Alexander Interactive, Inc.',

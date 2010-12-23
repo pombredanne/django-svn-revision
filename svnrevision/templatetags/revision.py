@@ -9,7 +9,7 @@ Requires svnversion.
 
 import sys, os
 from django import template
-from svn_revision.templatetags import get_revision
+from svnrevision.templatetags import get_revision
 
 register = template.Library()
 

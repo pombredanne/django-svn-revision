@@ -4,7 +4,8 @@ from subprocess import Popen, PIPE, STDOUT
 
 def get_revision():
 	try:
-		command = ['svnversion',os.path.join(os.path.abspath(os.path.dirname(__file__)),"../../../")]
+		trunk_path = os.path.join(os.path.abspath(os.path.dirname(__file__)),"../../../")
+		command = ['svnversion',trunk_path]
 		stIO = Popen(command, stdout=PIPE, stderr=STDOUT)
 		stIO.wait()
 		outS = stIO.stdout.read().strip()

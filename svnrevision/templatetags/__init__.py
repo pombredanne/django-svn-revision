@@ -2,10 +2,11 @@ import os
 import re
 from subprocess import Popen, PIPE, STDOUT
 
+from django.conf import settings
+
 def get_revision():
 	try:
-		trunk_path = os.path.join(os.path.abspath(os.path.dirname(__file__)),"../../../")
-		command = ['svnversion',trunk_path]
+		command = ['svnversion',settings.PROJECT_ROOT]
 		stIO = Popen(command, stdout=PIPE, stderr=STDOUT)
 		stIO.wait()
 		outS = stIO.stdout.read().strip()

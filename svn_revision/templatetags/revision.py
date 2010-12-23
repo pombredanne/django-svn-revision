@@ -1,5 +1,6 @@
 # $Id: django-revision.py $
 # Authors: Sean Auriti <sa@alexanderinteractive.com>, David Napolitan <dn@alexanderinteractive.com>
+# Updated by Chris Gilmer on 2010/12/22
 
 """
 Creates a template tag called {% revision %} that returns the current svn version.
@@ -7,16 +8,16 @@ Requires svnversion.
 """
 
 import sys, os
-sys.path.append(os.path.join(os.path.abspath(os.path.dirname(__file__)), "../../"))
 from django import template
-from svn_revision.templatetags import REVISION
+from svn_revision.templatetags import get_revision
 
 register = template.Library()
 
-
 @register.simple_tag
 def revision():
-    """displays the revision number
+    """
+	displays the revision number
     
-    {% revision %}"""
-    return REVISION
+    {% revision %}
+	"""
+    return get_revision()

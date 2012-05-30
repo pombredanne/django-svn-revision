@@ -1,4 +1,4 @@
-# Django-svn-revision
+# Django-svn-revision - Abandoned
 
 Creates a template tag called ``{% revision %}`` that returns the current svn version.
 
